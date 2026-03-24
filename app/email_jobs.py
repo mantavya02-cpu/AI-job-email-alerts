@@ -146,8 +146,8 @@ def send_digest_email(
 
 def send_test_email(
     recipient_override: str,
-    subject: str = "Job Digest Bot Test Email",
-    body: str = "This is a test email from Job Digest Bot.",
+    subject: str = "AI Job Email Alerts Test Email",
+    body: str = "This is a test email from AI Job Email Alerts.",
 ) -> bool:
     settings = build_email_settings(recipient_override=recipient_override)
     if settings is None:

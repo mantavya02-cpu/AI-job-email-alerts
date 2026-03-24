@@ -131,8 +131,8 @@ def main() -> None:
     if args.send_test_email:
         was_sent = send_test_email(
             recipient_override=args.email_to,
-            subject="Job Digest Bot Test Email",
-            body="This is a test email from Job Digest Bot.",
+            subject="AI Job Email Alerts Test Email",
+            body="This is a test email from AI Job Email Alerts.",
         )
         if was_sent:
             print("Sent test email.")
@@ -173,7 +173,7 @@ def main() -> None:
         was_sent = send_digest_email(
             job_list=jobs,
             digest_label=digest_label,
-            source_label="Job Digest Bot Digest",
+            source_label="AI Job Email Alerts Digest",
             recipient_override=args.email_to,
         )
         if was_sent:

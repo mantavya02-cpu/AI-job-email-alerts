@@ -1,4 +1,4 @@
-# Job Digest Bot Reference
+# AI Job Email Alerts Reference
 
 ## What This Project Does
 

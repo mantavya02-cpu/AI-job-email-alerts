@@ -1,1 +1,1 @@
-"""Application package for Job Digest Bot."""
+"""Application package for AI Job Email Alerts."""

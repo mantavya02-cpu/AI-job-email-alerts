@@ -1,6 +1,6 @@
-# Job Digest Bot
+# AI Job Email Alerts
 
-Suggested public repo name: `job-digest-bot`
+Public repo name: `AI-job-email-alerts`
 
 This project helps you find jobs, score them, save them to Google Sheets, and email yourself a simple digest.
 
@@ -28,8 +28,8 @@ You need:
 ### 1. Download the project
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/job-digest-bot.git
-cd job-digest-bot
+git clone https://github.com/YOUR-USERNAME/AI-job-email-alerts.git
+cd AI-job-email-alerts
 ```
 
 ### 2. Make a Python environment
@@ -135,7 +135,7 @@ You can change:
 
 ## Put It On GitHub
 
-1. Create a new repo called `job-digest-bot`.
+1. Create a new repo called `AI-job-email-alerts`.
 2. Push this code there.
 3. Add your GitHub Actions secrets.
 4. Make the repo public.
