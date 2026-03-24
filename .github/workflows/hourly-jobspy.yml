@@ -1,0 +1,45 @@
+name: Hourly Job Collection
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */2 * * *"
+
+jobs:
+  collect-jobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: America/New_York
+      GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+      RECRUITING_BOT_EMAIL_TO: ${{ secrets.RECRUITING_BOT_EMAIL_TO }}
+      RECRUITING_BOT_EMAIL_FROM: ${{ secrets.RECRUITING_BOT_EMAIL_FROM }}
+      RECRUITING_BOT_SMTP_HOST: ${{ secrets.RECRUITING_BOT_SMTP_HOST }}
+      RECRUITING_BOT_SMTP_PORT: ${{ secrets.RECRUITING_BOT_SMTP_PORT }}
+      RECRUITING_BOT_SMTP_USERNAME: ${{ secrets.RECRUITING_BOT_SMTP_USERNAME }}
+      RECRUITING_BOT_SMTP_PASSWORD: ${{ secrets.RECRUITING_BOT_SMTP_PASSWORD }}
+      RECRUITING_BOT_SMTP_USE_TLS: ${{ secrets.RECRUITING_BOT_SMTP_USE_TLS }}
+      OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Write Google credentials
+        run: |
+          mkdir -p keys
+          printf '%s' "$GOOGLE_CREDENTIALS_JSON" > keys/google-credentials.json
+
+      - name: Collect recent jobs into Google Sheets
+        run: |
+          python bot.py \
+            --max-jobs 12 \
+            --hours-old 24 \
+            --exclude-big-companies

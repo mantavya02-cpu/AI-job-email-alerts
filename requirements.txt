@@ -1,0 +1,7 @@
+beautifulsoup4
+google-auth
+gspread
+pandas
+playwright
+python-dotenv
+python-jobspy
