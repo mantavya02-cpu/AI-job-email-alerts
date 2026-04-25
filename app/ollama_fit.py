@@ -106,7 +106,7 @@ def score_job_with_ollama(job: dict[str, str], profile_notes: str) -> dict[str, 
     )
 
     try:
-        with urllib.request.urlopen(request, timeout=60) as response:
+        with urllib.request.urlopen(request, timeout=20) as response:
             response_payload = json.loads(response.read().decode("utf-8"))
     except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
         return None
