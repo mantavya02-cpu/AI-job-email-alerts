@@ -142,10 +142,17 @@ BLOCKED_TITLE_PATTERNS = [
     "founding product manager",
     "clinical product manager",
     "manager, product management",
+    "intern",
+    "internship",
+    "co-op",
+    "coop",
+    "summer",
+    "part-time",
+    "part time",
+    "contract",
 ]
 FIT_STRONG_TITLE_PATTERNS = [
     "associate product manager",
-    "product manager intern",
     "product strategy",
     "product manager",
     "strategy associate",
