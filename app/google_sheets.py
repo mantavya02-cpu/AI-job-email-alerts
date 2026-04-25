@@ -86,7 +86,7 @@ def build_client(credentials_path: str):
     return gspread.authorize(creds)
 
 
-# Open the exact worksheet that will store your contacted-job rows.
+# Open the exact worksheet that will store your contacted-job rows, creating it if it doesn't exist.
 def open_worksheet(credentials_path: str, spreadsheet_ref: str, worksheet_name: str):
     if not spreadsheet_ref:
         raise ValueError("Missing spreadsheet reference. Set GOOGLE_SHEET_NAME or pass --sheet.")
@@ -95,7 +95,10 @@ def open_worksheet(credentials_path: str, spreadsheet_ref: str, worksheet_name: 
 
     client = build_client(credentials_path)
     spreadsheet = client.open_by_key(extract_spreadsheet_id(spreadsheet_ref))
-    return spreadsheet.worksheet(worksheet_name)
+    try:
+        return spreadsheet.worksheet(worksheet_name)
+    except Exception:
+        return spreadsheet.add_worksheet(title=worksheet_name, rows=1000, cols=26)
 
 
 # Only write headers automatically when the sheet is empty to avoid overwriting your layout.
