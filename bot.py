@@ -202,20 +202,23 @@ def main() -> None:
     )
 
     if args.send_email:
-        was_sent = send_job_summary_email(
-            job_list=jobs,
-            source_label="JobSpy",
-            recipient_override=args.email_to,
-        )
-        if was_sent:
-            print("Sent JobSpy summary email.")
+        if not jobs:
+            print("No new jobs found this run — skipping email.")
         else:
-            print(
-                "Email summary skipped because SMTP settings are missing. "
-                "Set RECRUITING_BOT_SMTP_HOST, RECRUITING_BOT_SMTP_PORT, "
-                "RECRUITING_BOT_SMTP_USERNAME, RECRUITING_BOT_SMTP_PASSWORD, "
-                "and RECRUITING_BOT_EMAIL_TO."
+            was_sent = send_job_summary_email(
+                job_list=jobs,
+                source_label="JobSpy",
+                recipient_override=args.email_to,
             )
+            if was_sent:
+                print("Sent JobSpy summary email.")
+            else:
+                print(
+                    "Email summary skipped because SMTP settings are missing. "
+                    "Set RECRUITING_BOT_SMTP_HOST, RECRUITING_BOT_SMTP_PORT, "
+                    "RECRUITING_BOT_SMTP_USERNAME, RECRUITING_BOT_SMTP_PASSWORD, "
+                    "and RECRUITING_BOT_EMAIL_TO."
+                )
 
 
 if __name__ == "__main__":

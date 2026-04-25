@@ -46,4 +46,5 @@ jobs:
         run: |
           python bot.py \
             --max-jobs 15 \
-            --hours-old 24
+            --hours-old 24 \
+            --send-email
