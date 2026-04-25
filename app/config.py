@@ -32,6 +32,7 @@ JOBSPY_BLOCKED_RECRUITER_KEYWORDS = [
     "teksystems",
     "optomi",
     "motion recruitment",
+    "cybercoders",
     "recruit",
     "staffing",
 ]
@@ -57,6 +58,10 @@ VISA_RESTRICTION_KEYWORDS = [
     "active security clearance required",
     "top secret clearance required",
     "secret clearance required",
+    "active secret clearance",
+    "requires secret clearance",
+    "clearance required",
+    "security clearance required",
 ]
 FIT_SCORE_MINIMUM = 4
 FIT_DESCRIPTION_POSITIVE_KEYWORDS = [
