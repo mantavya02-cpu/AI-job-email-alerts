@@ -90,23 +90,15 @@ FIT_DESCRIPTION_NEGATIVE_KEYWORDS = [
 FIT_PREFERRED_LOCATION_KEYWORDS = []
 SEARCH_TERMS = [
     "Associate Product Manager",
-    "Product Manager",
-    "Product Strategy",
-    "Product Manager Intern",
     "MBA Product Manager",
     "Healthcare Analyst",
-    "Strategy Analyst",
-    "Management Consulting",
-    "Business Analyst",
     "Strategy Associate",
 ]
 TARGET_LOCATIONS = [
-    "Boston, Massachusetts, United States",
     "New York, New York, United States",
-    "Washington, District of Columbia, United States",
-    "Philadelphia, Pennsylvania, United States",
     "Chicago, Illinois, United States",
     "San Francisco, California, United States",
+    "Boston, Massachusetts, United States",
 ]
 MAX_JOBS_PER_DAY = 40
 ALLOWED_TITLE_PATTERNS = [
