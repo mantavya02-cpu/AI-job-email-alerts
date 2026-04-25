@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "30 13 * * *"
-    - cron: "30 15 * * *"
-    - cron: "30 17 * * *"
-    - cron: "30 19 * * *"
-    - cron: "30 21 * * *"
-    - cron: "30 23 * * *"
+    - cron: "30 14 * * *"
+    - cron: "30 16 * * *"
+    - cron: "30 18 * * *"
+    - cron: "30 20 * * *"
+    - cron: "30 22 * * *"
 
 jobs:
   collect-jobs:
