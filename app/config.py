@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from pathlib import Path
 
@@ -13,7 +13,7 @@ OLLAMA_MODEL = "gemma3:4b-cloud"
 OLLAMA_SHORTLIST_SIZE = 12
 OLLAMA_MIN_FIT_SCORE = 9
 OLLAMA_APPROVED_MAX_PER_RUN = 2
-DEFAULT_SHEETS_URL = ""
+DEFAULT_SHEETS_URL = "https://docs.google.com/spreadsheets/d/14m287_XzZc-rN6-MNhXOMnN5cIiSAoDs2V9GPgqNmRY"
 DEFAULT_SHEETS_TAB = "Jobs"
 ARCHIVED_SHEETS_TAB = "Archived Jobs"
 JOBSPY_SITES = [
