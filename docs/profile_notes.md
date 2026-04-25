@@ -17,10 +17,19 @@ Target roles:
 - Product Manager Intern
 - Growth Product Manager
 - Product Operations
+- Healthcare Analyst
+- Strategy Analyst
+- Strategy Associate
+- Associate Consultant
+- Management Consultant
+- Business Analyst
 
 Preferred locations:
 - Boston, Massachusetts
 - New York, New York
+- Washington DC
+- Philadelphia, Pennsylvania
+- Chicago, Illinois
 - San Francisco, California
 - Remote
 
@@ -51,6 +60,9 @@ Preferred industries:
 - ai
 - fintech
 - healthtech
+- life sciences
+- management consulting
+- strategy consulting
 - consumer tech
 - e-commerce
 

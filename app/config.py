@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from pathlib import Path
 
@@ -74,10 +74,18 @@ SEARCH_TERMS = [
     "Product Strategy",
     "Product Manager Intern",
     "MBA Product Manager",
+    "Healthcare Analyst",
+    "Strategy Analyst",
+    "Management Consulting",
+    "Business Analyst",
+    "Strategy Associate",
 ]
 TARGET_LOCATIONS = [
     "Boston, Massachusetts, United States",
     "New York, New York, United States",
+    "Washington, District of Columbia, United States",
+    "Philadelphia, Pennsylvania, United States",
+    "Chicago, Illinois, United States",
     "San Francisco, California, United States",
 ]
 MAX_JOBS_PER_DAY = 10
@@ -89,6 +97,13 @@ ALLOWED_TITLE_PATTERNS = [
     "growth product manager",
     "product operations",
     "product analyst",
+    "healthcare analyst",
+    "strategy analyst",
+    "strategy associate",
+    "business analyst",
+    "management consultant",
+    "consulting analyst",
+    "associate consultant",
 ]
 BLOCKED_TITLE_PATTERNS = [
     "senior",
@@ -114,4 +129,8 @@ FIT_STRONG_TITLE_PATTERNS = [
     "product manager intern",
     "product strategy",
     "product manager",
+    "strategy associate",
+    "strategy analyst",
+    "healthcare analyst",
+    "associate consultant",
 ]
