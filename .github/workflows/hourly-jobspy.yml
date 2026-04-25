@@ -3,7 +3,12 @@ name: Hourly Job Collection
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "30 13 * * *"
+    - cron: "30 15 * * *"
+    - cron: "30 17 * * *"
+    - cron: "30 19 * * *"
+    - cron: "30 21 * * *"
+    - cron: "30 23 * * *"
 
 jobs:
   collect-jobs:
