@@ -40,5 +40,5 @@ jobs:
       - name: Collect recent jobs into Google Sheets
         run: |
           python bot.py \
-            --max-jobs 40 \
+            --max-jobs 15 \
             --hours-old 24
