@@ -35,8 +35,29 @@ JOBSPY_BLOCKED_RECRUITER_KEYWORDS = [
     "motion recruitment",
     "recruit",
     "staffing",
-    "consulting",
-    "consultancy",
+]
+VISA_RESTRICTION_KEYWORDS = [
+    "no sponsorship",
+    "no visa sponsorship",
+    "no work visa",
+    "not able to sponsor",
+    "unable to sponsor",
+    "cannot sponsor",
+    "we do not sponsor",
+    "does not sponsor",
+    "sponsorship is not available",
+    "sponsorship not available",
+    "not eligible for sponsorship",
+    "ineligible for sponsorship",
+    "sponsorship cannot be provided",
+    "must be a us citizen",
+    "must be a u.s. citizen",
+    "us citizens only",
+    "u.s. citizens only",
+    "citizen or permanent resident only",
+    "active security clearance required",
+    "top secret clearance required",
+    "secret clearance required",
 ]
 FIT_SCORE_MINIMUM = 4
 FIT_DESCRIPTION_POSITIVE_KEYWORDS = [

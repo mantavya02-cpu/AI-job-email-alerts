@@ -27,6 +27,7 @@ from .config import (
     PROFILE_NOTES_FILE,
     SEARCH_TERMS,
     TARGET_LOCATIONS,
+    VISA_RESTRICTION_KEYWORDS,
 )
 from .google_sheets import append_contacted_job_from_values_if_new, get_jobs_for_today
 from .ollama_fit import ollama_is_configured, split_jobs_with_ollama
@@ -184,6 +185,13 @@ def is_excluded_company(row: dict[str, Any]) -> bool:
     return False
 
 
+def requires_visa_sponsorship_unavailable(job: dict[str, Any]) -> bool:
+    description = normalize_text(job.get("description")).lower()
+    if not description:
+        return False
+    return any(phrase in description for phrase in VISA_RESTRICTION_KEYWORDS)
+
+
 def score_job_fit(job: dict[str, str]) -> int:
     score = 0
     title = normalize_text(job.get("title")).lower()
@@ -282,6 +290,9 @@ def search_jobspy_jobs(
                 if not was_posted_within_hours(raw_job.get("date_posted"), hours_old):
                     continue
                 if exclude_big_companies and is_excluded_company(raw_job):
+                    continue
+                if requires_visa_sponsorship_unavailable(raw_job):
+                    log(f"Skipped (no H1B sponsorship): {normalize_text(raw_job.get('title'))} at {normalize_text(raw_job.get('company'))}")
                     continue
 
                 normalized = normalize_jobspy_job(raw_job)
