@@ -40,6 +40,5 @@ jobs:
       - name: Collect recent jobs into Google Sheets
         run: |
           python bot.py \
-            --max-jobs 12 \
-            --hours-old 24 \
-            --exclude-big-companies
+            --max-jobs 40 \
+            --hours-old 24
