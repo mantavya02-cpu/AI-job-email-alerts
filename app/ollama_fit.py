@@ -33,11 +33,14 @@ def load_profile_notes(profile_notes_path: str = str(PROFILE_NOTES_FILE)) -> str
 def build_job_prompt(job: dict[str, str], profile_notes: str) -> str:
     description = (job.get("description") or "")[:4000]
     return (
-        "You are scoring whether a job is a strong fit for a candidate.\n"
+        "You are a recruiting assistant scoring job fit for a candidate.\n"
         "Use the profile notes as the source of truth.\n"
         "Return only valid JSON with keys fit_score, should_save, reason.\n"
         "fit_score must be an integer from 0 to 10.\n"
-        "should_save must be true only for strong fits worth sending in a daily digest.\n"
+        "should_save must be true if the job is a reasonable match — err on the side of inclusion.\n"
+        "Set should_save to false ONLY if the job is clearly irrelevant, requires skills the candidate lacks, "
+        "or explicitly states no H1B/visa sponsorship (phrases like 'no sponsorship', 'must be a US citizen', "
+        "'we do not sponsor', 'sponsorship not available').\n"
         "reason must be one short sentence.\n\n"
         f"Profile notes:\n{profile_notes}\n\n"
         f"Job title: {job.get('title', '')}\n"

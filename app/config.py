@@ -10,9 +10,9 @@ PROFILE_NOTES_FILE = PROJECT_ROOT / "docs" / "profile_notes.md"
 DEFAULT_SHEETS_CREDENTIALS = PROJECT_ROOT / "keys" / "google-credentials.json"
 OLLAMA_BASE_URL = "https://ollama.com"
 OLLAMA_MODEL = "gemma3:4b-cloud"
-OLLAMA_SHORTLIST_SIZE = 12
-OLLAMA_MIN_FIT_SCORE = 9
-OLLAMA_APPROVED_MAX_PER_RUN = 2
+OLLAMA_SHORTLIST_SIZE = 30
+OLLAMA_MIN_FIT_SCORE = 6
+OLLAMA_APPROVED_MAX_PER_RUN = 15
 DEFAULT_SHEETS_URL = "https://docs.google.com/spreadsheets/d/14m287_XzZc-rN6-MNhXOMnN5cIiSAoDs2V9GPgqNmRY"
 DEFAULT_SHEETS_TAB = "Jobs"
 ARCHIVED_SHEETS_TAB = "Archived Jobs"
@@ -109,7 +109,7 @@ TARGET_LOCATIONS = [
     "Chicago, Illinois, United States",
     "San Francisco, California, United States",
 ]
-MAX_JOBS_PER_DAY = 10
+MAX_JOBS_PER_DAY = 40
 ALLOWED_TITLE_PATTERNS = [
     "associate product manager",
     "product manager",
