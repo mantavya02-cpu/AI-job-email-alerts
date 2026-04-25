@@ -25,12 +25,7 @@ Target roles:
 - Business Analyst
 
 Preferred locations:
-- Boston, Massachusetts
-- New York, New York
-- Washington DC
-- Philadelphia, Pennsylvania
-- Chicago, Illinois
-- San Francisco, California
+- United States
 - Remote
 
 Strong fit keywords:
