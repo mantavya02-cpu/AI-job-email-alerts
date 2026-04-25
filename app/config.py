@@ -18,7 +18,6 @@ DEFAULT_SHEETS_TAB = "Jobs"
 ARCHIVED_SHEETS_TAB = "Archived Jobs"
 JOBSPY_SITES = [
     "linkedin",
-    "google",
     "indeed",
 ]
 JOBSPY_HOURS_OLD = 24
