@@ -144,6 +144,7 @@ TARGET_LOCATIONS = [
 ]
 MAX_JOBS_PER_DAY = 40
 ALLOWED_TITLE_PATTERNS = [
+    # Product roles
     "associate product manager",
     "product manager",
     "product strategy",
@@ -151,12 +152,24 @@ ALLOWED_TITLE_PATTERNS = [
     "growth product manager",
     "product operations",
     "product analyst",
-    "healthcare analyst",
+    # Healthcare / life sciences — broad enough to catch real job title variants
+    "healthcare",
     "health analyst",
-    "healthcare product manager",
-    "health product manager",
+    "health system",
+    "health policy",
+    "health economics",
+    "digital health",
+    "population health",
+    "clinical analyst",
+    "clinical strategy",
+    "clinical operations",
+    "medical affairs",
+    "care management",
     "life sciences",
-    "pharma analyst",
+    "pharma",
+    "biotech",
+    "therapeutics",
+    # Strategy / consulting
     "strategy analyst",
     "strategy associate",
     "business analyst",
@@ -191,13 +204,20 @@ BLOCKED_TITLE_PATTERNS = [
     "contract",
 ]
 FIT_STRONG_TITLE_PATTERNS = [
-    "healthcare analyst",
+    "healthcare",
     "health analyst",
+    "health system",
+    "clinical analyst",
+    "clinical strategy",
+    "digital health",
+    "population health",
+    "life sciences",
+    "pharma",
+    "biotech",
     "associate product manager",
     "product strategy",
     "product manager",
     "strategy associate",
     "strategy analyst",
-    "healthcare analyst",
     "associate consultant",
 ]
