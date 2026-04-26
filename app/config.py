@@ -29,6 +29,9 @@ JOBSPY_BIG_COMPANY_EMPLOYEE_MARKERS = [
 ]
 JOBSPY_BLOCKED_COMPANY_KEYWORDS = [
     "deloitte",
+    "jpmorgan",
+    "jp morgan",
+    "jpmc",
 ]
 JOBSPY_BLOCKED_RECRUITER_KEYWORDS = [
     "teksystems",
@@ -67,6 +70,16 @@ VISA_RESTRICTION_KEYWORDS = [
 ]
 FIT_SCORE_MINIMUM = 4
 FIT_DESCRIPTION_POSITIVE_KEYWORDS = [
+    "healthcare",
+    "health care",
+    "life sciences",
+    "pharma",
+    "biotech",
+    "clinical",
+    "payer",
+    "provider",
+    "health tech",
+    "healthtech",
     "mba",
     "new grad",
     "early career",
@@ -152,6 +165,8 @@ BLOCKED_TITLE_PATTERNS = [
     "contract",
 ]
 FIT_STRONG_TITLE_PATTERNS = [
+    "healthcare analyst",
+    "health analyst",
     "associate product manager",
     "product strategy",
     "product manager",

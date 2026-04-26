@@ -37,6 +37,7 @@ def build_job_prompt(job: dict[str, str], profile_notes: str) -> str:
         "Use the profile notes as the source of truth.\n"
         "Return only valid JSON with keys fit_score, should_save, reason.\n"
         "fit_score must be an integer from 0 to 10.\n"
+        "Give extra weight (+2) to healthcare, life sciences, pharma, biotech, or health tech roles.\n"
         "should_save must be true if the job is a reasonable match — err on the side of inclusion.\n"
         "Set should_save to false ONLY if the job is clearly irrelevant, requires skills the candidate lacks, "
         "or explicitly states no H1B/visa sponsorship (phrases like 'no sponsorship', 'must be a US citizen', "
