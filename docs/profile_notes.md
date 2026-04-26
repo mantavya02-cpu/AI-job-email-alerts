@@ -14,10 +14,15 @@ Target roles:
 - Product Manager
 - MBA Product Manager
 - Product Strategy
-- Product Manager Intern
 - Growth Product Manager
 - Product Operations
 - Healthcare Analyst
+- Health Analyst
+- Clinical Analyst
+- Life Sciences Analyst
+- Health System Analyst
+- Digital Health Analyst
+- Healthcare Product Manager
 - Strategy Analyst
 - Strategy Associate
 - Associate Consultant
@@ -51,28 +56,28 @@ Preferred company type:
 - high-growth company
 
 Preferred industries:
+- healthcare
+- health system
+- life sciences
+- pharma
+- pharmaceutical
+- biotech
+- digital health
+- healthtech
 - saas
 - ai
 - fintech
-- healthtech
-- life sciences
 - management consulting
 - strategy consulting
 - consumer tech
 - e-commerce
 
 Avoid:
-- senior
-- staff
-- director
-- vice president
-- vp
-- head of
 - recruiting agency
-- staffing
+- staffing agency
 - sales quota
 - technical product manager
-- clinical
+- security product manager
 
 Resume highlights:
 - MBA student at CMU Tepper graduating May 2026, concentrating in Strategy, Business Technology, and AI

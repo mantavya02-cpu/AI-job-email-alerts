@@ -78,17 +78,17 @@ FIT_HEALTHCARE_KEYWORDS = [
     "biotech",
     "clinical",
     "payer",
-    "provider",
     "health tech",
     "healthtech",
     "health system",
     "digital health",
     "hospital",
     "medical device",
-    "drug",
     "therapeutics",
     "oncology",
-    "patient",
+    "patient outcomes",
+    "health insurance",
+    "population health",
 ]
 FIT_DESCRIPTION_POSITIVE_KEYWORDS = [
     "mba",
@@ -110,13 +110,7 @@ FIT_DESCRIPTION_NEGATIVE_KEYWORDS = [
     "7+ years",
     "8+ years",
     "10+ years",
-    "staff",
-    "principal",
-    "director",
-    "vp",
-    "vice president",
     "quota",
-    "sales",
 ]
 FIT_PREFERRED_LOCATION_KEYWORDS = []
 PRIORITY_COMPANY_KEYWORDS = [

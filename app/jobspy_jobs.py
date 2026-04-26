@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from functools import lru_cache
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -81,11 +82,18 @@ def load_profile_preferences(profile_notes_path: str = str(PROFILE_NOTES_FILE)) 
     return preferences
 
 
+def _blocked_pattern_matches(pattern: str, normalized_title: str) -> bool:
+    stripped = pattern.strip()
+    if " " not in stripped:
+        return bool(re.search(r"\b" + re.escape(stripped) + r"\b", normalized_title))
+    return pattern in normalized_title
+
+
 def is_allowed_title(title: str) -> bool:
     normalized = normalize_text(title).lower()
     if not normalized:
         return False
-    if any(pattern in normalized for pattern in BLOCKED_TITLE_PATTERNS):
+    if any(_blocked_pattern_matches(p, normalized) for p in BLOCKED_TITLE_PATTERNS):
         return False
     return any(pattern in normalized for pattern in ALLOWED_TITLE_PATTERNS)
 
