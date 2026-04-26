@@ -367,11 +367,12 @@ def save_jobspy_jobs_to_google_sheets(
     credentials_path: str,
     spreadsheet_ref: str,
     worksheet_name: str = "Jobs",
-) -> None:
+) -> list[dict[str, str]]:
     if not job_list:
         log("No JobSpy jobs to save to Google Sheets.")
-        return
+        return []
 
+    newly_added: list[dict[str, str]] = []
     for job in job_list:
         try:
             was_added = append_contacted_job_from_values_if_new(
@@ -384,11 +385,13 @@ def save_jobspy_jobs_to_google_sheets(
                 job_application_link=job["link"],
             )
             if was_added:
+                newly_added.append(job)
                 log(f"Saved JobSpy job to Google Sheets: {job['title']} at {job['company']}")
             else:
                 log(f"Skipped duplicate JobSpy job in Google Sheets: {job['title']} at {job['company']}")
         except Exception as exc:
             log(f"Failed to save JobSpy job for {job['company']}: {exc}")
+    return newly_added
 
 
 def save_partitioned_jobspy_jobs_to_google_sheets(
@@ -398,9 +401,10 @@ def save_partitioned_jobspy_jobs_to_google_sheets(
     spreadsheet_ref: str,
     approved_worksheet_name: str,
     archived_worksheet_name: str,
-) -> None:
+) -> list[dict[str, str]]:
+    newly_approved: list[dict[str, str]] = []
     if approved_jobs:
-        save_jobspy_jobs_to_google_sheets(
+        newly_approved = save_jobspy_jobs_to_google_sheets(
             job_list=approved_jobs,
             credentials_path=credentials_path,
             spreadsheet_ref=spreadsheet_ref,
@@ -414,6 +418,8 @@ def save_partitioned_jobspy_jobs_to_google_sheets(
             spreadsheet_ref=spreadsheet_ref,
             worksheet_name=archived_worksheet_name,
         )
+
+    return newly_approved
 
 
 def get_remaining_daily_slots(
@@ -486,7 +492,7 @@ def run_jobspy_job_search(
         log(f"Archived {len(archived_jobs)} jobs rejected by Ollama.")
 
     if save_to_sheets:
-        save_partitioned_jobspy_jobs_to_google_sheets(
+        newly_saved = save_partitioned_jobspy_jobs_to_google_sheets(
             approved_jobs=approved_jobs,
             archived_jobs=archived_jobs,
             credentials_path=sheets_credentials_path,
@@ -494,5 +500,6 @@ def run_jobspy_job_search(
             approved_worksheet_name=sheets_tab_name,
             archived_worksheet_name=archived_sheets_tab_name,
         )
+        return newly_saved
 
     return approved_jobs

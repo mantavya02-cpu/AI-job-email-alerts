@@ -98,7 +98,9 @@ Experience themes:
 - AI and GenAI applications
 
 Notes:
-- Early-career MBA candidate; best fit for APM programs or new-grad PM roles
+- Early-career MBA candidate; best fit for APM programs, healthcare analyst roles, or new-grad PM roles
 - Strong quantitative background (GMAT Q51, IIT engineering, analytics consulting)
 - Prefers roles with clear ownership and strategic scope
-- Interested in AI-driven products, consumer platforms, and growth-stage companies
+- Healthcare, life sciences, pharma, biotech, and digital health are the TOP priority industries
+- Also open to AI-driven products, consumer platforms, and growth-stage companies in any industry
+- H1B visa holder — must have sponsorship available; skip any role that restricts sponsorship

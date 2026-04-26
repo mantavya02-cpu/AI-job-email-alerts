@@ -65,7 +65,6 @@ VISA_RESTRICTION_KEYWORDS = [
     "secret clearance required",
     "active secret clearance",
     "requires secret clearance",
-    "clearance required",
     "security clearance required",
 ]
 FIT_SCORE_MINIMUM = 4
@@ -196,6 +195,16 @@ BLOCKED_TITLE_PATTERNS = [
     "part-time",
     "part time",
     "contract",
+    # Clinical / hands-on roles not relevant to PM/analyst search
+    "pharmacist",
+    "pharmacy technician",
+    "registered nurse",
+    "nurse practitioner",
+    "physician",
+    # Sales roles
+    "sales representative",
+    "account executive",
+    "account manager",
 ]
 FIT_STRONG_TITLE_PATTERNS = [
     "healthcare",
