@@ -108,6 +108,13 @@ FIT_DESCRIPTION_NEGATIVE_KEYWORDS = [
     "sales",
 ]
 FIT_PREFERRED_LOCATION_KEYWORDS = []
+PRIORITY_COMPANY_KEYWORDS = [
+    "clearview",
+    "humana",
+    "biogen",
+    "novartis",
+    "vertex",
+]
 SEARCH_TERMS = [
     "Associate Product Manager",
     "Healthcare Product Manager",
@@ -115,6 +122,8 @@ SEARCH_TERMS = [
     "Life Sciences Strategy",
     "Strategy Associate",
     "MBA Product Manager",
+    "Pharma Strategy Analyst",
+    "Life Sciences Analyst",
 ]
 TARGET_LOCATIONS = [
     "New York, New York, United States",

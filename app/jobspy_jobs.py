@@ -24,6 +24,7 @@ from .config import (
     OLLAMA_APPROVED_MAX_PER_RUN,
     OLLAMA_MIN_FIT_SCORE,
     OLLAMA_SHORTLIST_SIZE,
+    PRIORITY_COMPANY_KEYWORDS,
     PROFILE_NOTES_FILE,
     SEARCH_TERMS,
     TARGET_LOCATIONS,
@@ -225,9 +226,13 @@ def score_job_fit(job: dict[str, str]) -> int:
     elif any(keyword in description for keyword in FIT_DESCRIPTION_POSITIVE_KEYWORDS):
         score += 2
 
-    if company_size:
+    is_priority_company = any(keyword in company for keyword in PRIORITY_COMPANY_KEYWORDS)
+    if is_priority_company:
+        score += 4
+
+    if company_size and not is_priority_company:
         if any(marker.lower() in company_size for marker in JOBSPY_BIG_COMPANY_EMPLOYEE_MARKERS):
-            score -= 3
+            score -= 1
         else:
             score += 1
             if any(keyword in full_text for keyword in preferred_company_types):
