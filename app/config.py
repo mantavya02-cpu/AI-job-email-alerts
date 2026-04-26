@@ -69,17 +69,28 @@ VISA_RESTRICTION_KEYWORDS = [
     "security clearance required",
 ]
 FIT_SCORE_MINIMUM = 4
-FIT_DESCRIPTION_POSITIVE_KEYWORDS = [
+FIT_HEALTHCARE_KEYWORDS = [
     "healthcare",
     "health care",
     "life sciences",
     "pharma",
+    "pharmaceutical",
     "biotech",
     "clinical",
     "payer",
     "provider",
     "health tech",
     "healthtech",
+    "health system",
+    "digital health",
+    "hospital",
+    "medical device",
+    "drug",
+    "therapeutics",
+    "oncology",
+    "patient",
+]
+FIT_DESCRIPTION_POSITIVE_KEYWORDS = [
     "mba",
     "new grad",
     "early career",
@@ -116,14 +127,14 @@ PRIORITY_COMPANY_KEYWORDS = [
     "vertex",
 ]
 SEARCH_TERMS = [
-    "Associate Product Manager",
     "Healthcare Product Manager",
     "Health Analyst",
     "Life Sciences Strategy",
-    "Strategy Associate",
-    "MBA Product Manager",
     "Pharma Strategy Analyst",
     "Life Sciences Analyst",
+    "Digital Health Product Manager",
+    "Health System Analyst",
+    "Associate Product Manager",
 ]
 TARGET_LOCATIONS = [
     "New York, New York, United States",

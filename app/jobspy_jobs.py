@@ -11,6 +11,7 @@ from .config import (
     BLOCKED_TITLE_PATTERNS,
     FIT_DESCRIPTION_NEGATIVE_KEYWORDS,
     FIT_DESCRIPTION_POSITIVE_KEYWORDS,
+    FIT_HEALTHCARE_KEYWORDS,
     FIT_PREFERRED_LOCATION_KEYWORDS,
     FIT_SCORE_MINIMUM,
     FIT_STRONG_TITLE_PATTERNS,
@@ -223,6 +224,8 @@ def score_job_fit(job: dict[str, str]) -> int:
 
     if any(keyword in full_text for keyword in strong_fit_keywords):
         score += 3
+    if any(keyword in full_text for keyword in FIT_HEALTHCARE_KEYWORDS):
+        score += 4
     elif any(keyword in description for keyword in FIT_DESCRIPTION_POSITIVE_KEYWORDS):
         score += 2
 
