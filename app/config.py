@@ -110,9 +110,11 @@ FIT_DESCRIPTION_NEGATIVE_KEYWORDS = [
 FIT_PREFERRED_LOCATION_KEYWORDS = []
 SEARCH_TERMS = [
     "Associate Product Manager",
-    "MBA Product Manager",
-    "Healthcare Analyst",
+    "Healthcare Product Manager",
+    "Health Analyst",
+    "Life Sciences Strategy",
     "Strategy Associate",
+    "MBA Product Manager",
 ]
 TARGET_LOCATIONS = [
     "New York, New York, United States",
@@ -130,6 +132,11 @@ ALLOWED_TITLE_PATTERNS = [
     "product operations",
     "product analyst",
     "healthcare analyst",
+    "health analyst",
+    "healthcare product manager",
+    "health product manager",
+    "life sciences",
+    "pharma analyst",
     "strategy analyst",
     "strategy associate",
     "business analyst",
@@ -153,7 +160,6 @@ BLOCKED_TITLE_PATTERNS = [
     "security product manager",
     "internal systems",
     "founding product manager",
-    "clinical product manager",
     "manager, product management",
     "intern",
     "internship",
