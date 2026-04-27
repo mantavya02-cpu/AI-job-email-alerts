@@ -179,6 +179,8 @@ BLOCKED_TITLE_PATTERNS = [
     "head of",
     "vice president",
     "vp ",
+    "svp",
+    "evp",
     "lead ",
     "group product manager",
     "chief ",

@@ -84,9 +84,11 @@ def load_profile_preferences(profile_notes_path: str = str(PROFILE_NOTES_FILE)) 
 
 def _blocked_pattern_matches(pattern: str, normalized_title: str) -> bool:
     stripped = pattern.strip()
-    if " " not in stripped:
+    # Use word-boundary matching only for purely alphabetic single words.
+    # Patterns with punctuation (e.g. "sr.") or spaces use plain substring match.
+    if " " not in stripped and stripped.isalpha():
         return bool(re.search(r"\b" + re.escape(stripped) + r"\b", normalized_title))
-    return pattern in normalized_title
+    return stripped in normalized_title
 
 
 def is_allowed_title(title: str) -> bool:

@@ -44,7 +44,7 @@ Strong fit keywords:
 - growth
 - consumer
 - b2c
-- ai
+- artificial intelligence
 - platform
 - go-to-market
 - market research
@@ -65,7 +65,7 @@ Preferred industries:
 - digital health
 - healthtech
 - saas
-- ai
+- artificial intelligence
 - fintech
 - management consulting
 - strategy consulting
