@@ -8,6 +8,7 @@ import urllib.request
 from pathlib import Path
 
 from .config import (
+    FIT_HEALTHCARE_KEYWORDS,
     OLLAMA_BASE_URL,
     OLLAMA_MIN_FIT_SCORE,
     OLLAMA_MODEL,
@@ -210,15 +211,23 @@ def split_jobs_with_ollama(
         else:
             archived.append(enriched_job)
 
-    approved.sort(
-        key=lambda job: (
+    def _approved_sort_key(job: dict[str, str]) -> tuple:
+        full_text = " ".join([
+            job.get("title", ""),
+            job.get("company", ""),
+            job.get("description", ""),
+        ]).lower()
+        is_healthcare = any(kw in full_text for kw in FIT_HEALTHCARE_KEYWORDS)
+        return (
+            0 if is_healthcare else 1,
             -int(job.get("ollama_fit_score", "0") or 0),
             -int(job.get("fit_score", "0") or 0),
             job.get("posted_at") == "",
             job.get("posted_at", ""),
             job.get("company", "").lower(),
-        ),
-    )
+        )
+
+    approved.sort(key=_approved_sort_key)
     archived.sort(
         key=lambda job: (
             -int(job.get("fit_score", "0") or 0),
