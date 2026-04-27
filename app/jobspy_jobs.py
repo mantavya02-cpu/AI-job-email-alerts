@@ -235,7 +235,7 @@ def score_job_fit(job: dict[str, str]) -> int:
     if any(keyword in full_text for keyword in strong_fit_keywords):
         score += 3
     if any(keyword in full_text for keyword in FIT_HEALTHCARE_KEYWORDS):
-        score += 4
+        score += 6
     elif any(keyword in description for keyword in FIT_DESCRIPTION_POSITIVE_KEYWORDS):
         score += 2
 
@@ -337,14 +337,22 @@ def search_jobspy_jobs(
                     f"in {normalized['location']} via {normalized['source']} (fit {fit_score})"
                 )
 
-    collected_jobs.sort(
-        key=lambda job: (
+    def _sort_key(job: dict[str, str]) -> tuple:
+        full_text = " ".join([
+            job.get("title", ""),
+            job.get("company", ""),
+            job.get("description", ""),
+        ]).lower()
+        is_healthcare = any(kw in full_text for kw in FIT_HEALTHCARE_KEYWORDS)
+        return (
+            0 if is_healthcare else 1,          # healthcare jobs always first
             -int(job.get("fit_score", "0") or 0),
             job.get("posted_at") == "",
             job.get("posted_at", ""),
             job["company"].lower(),
-        ),
-    )
+        )
+
+    collected_jobs.sort(key=_sort_key)
     return collected_jobs
 
 
