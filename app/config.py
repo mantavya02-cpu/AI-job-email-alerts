@@ -199,9 +199,10 @@ BLOCKED_TITLE_PATTERNS = [
     "contract",
     # Clinical / hands-on roles not relevant to PM/analyst search
     "pharmacist",
-    "pharmacy technician",
+    "technician",
     "registered nurse",
     "nurse practitioner",
+    "nurse",
     "physician",
     # Sales roles
     "sales representative",
